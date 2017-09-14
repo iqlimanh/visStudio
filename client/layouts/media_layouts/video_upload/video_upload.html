@@ -1,0 +1,54 @@
+<template name="video_upload">
+	<div class="row marg">
+		<div class="col s6">
+			<div class="card">
+				<ul class="collection with-header">
+					<li class="collection-header"><h4>Upload Video</h4>{{uploadForm_video}}</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="col s6">
+			<div class="card">
+				<ul class="collection with-header">
+					<li class="collection-header"><h4>List Video</h4>{{file_video}}</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="file_video">
+	<div class="row">
+		<table class="responsive-table center-align bordered">
+			<thead>
+				<tr>
+					<th class="col s12 m4 l2">Avatar</th>
+					<th class="col s12 m4 l5">Name File</th>
+					<th class="col s12 m4 l3">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each file}}
+				<tr>
+					<td class="col s12 m12 l2"><img src="../img/{{name}}" alt="" class="circle responsive-img"></td>
+					<td class="col s12 m12 l5">{{name}}</td>
+					<td class="col s12 m12 l3">
+						<a href="{{link}}?download=true" download="{{name}}" target="_parent" type="{{type}}" class="collection-item btn btn-primary"><i class="material-icons">file_download</i></a>
+						<a class="waves-effect btn"><i class="material-icons">delete</i></a>
+					</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</template>
+
+<template name="uploadForm_video">
+	{{#with currentUpload_video}}
+	Uploading <b>{{file_video.name}}</b>:
+	<span id="progress">{{progress.get}}%</span>
+	{{else}}
+	<input id="fileInputVideo" type="file" />
+	{{/with}}
+</template>

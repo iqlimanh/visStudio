@@ -1,14 +1,71 @@
-nav {
-	background-color: #424242 !important;
+nav{
+    background-color: #37474f !important;
+    
+
+    @media screen and (min-width: 992px){
+        margin-left: 100px !important;
+    }
+}
+
+
+#slide-out{
+    width: 100px;
+    padding-top: 80px;
+    background-color: #37474f;
+}
+
+.side-nav li > a {
+    color: rgba(0, 0, 0, 0.87);
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 60px;
+    line-height: 50px;
+    padding: 0 24px;
+}
+
+.side-nav li > a > i, .side-nav li > a > [class^="mdi-"], .side-nav li
+> a li > a > [class*="mdi-"], .side-nav li > a > i.material-icons {
+    padding-top: 7px;
+    float: left;
+    height: 60px;
+    line-height: 48px;
+    margin: 0 32px 0 0;
+    width: 24px;
+    color: #fff;
+}
+
+i.medium {
+    font-size: 2.7rem;
+}
+
+
+.dropdown-button {
+    margin-right: 72px;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    letter-spacing: .5px;
+    transition: .2s ease-out;
+    cursor: pointer;
+    float: right;
+    width: 150px;
 }
 
 .menu-header .dropdown-content {
-	margin-top: 60px !important;
-	width: 200px !important;
-	background-color: #202020 !important;
+    margin-top: 50px !important;
+    background-color: #37474f;
+    color: #fff;
+    margin-left: 13px;
+}
+.dropdown-content li a{
+    background-color: #37474f;
+    color: #fff;
+    font-size: 12px;
 }
 
-.menu-header .dropdown-content li a {
-	color: white !important;
-	font-size: 12px !important;
+.dropdown-content li a:hover{
+    background-color: #00796b;
+    color: #fff;
+    font-size: 12px;
 }

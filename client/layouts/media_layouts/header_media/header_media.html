@@ -1,29 +1,61 @@
 <template name="header_media">
-   	<nav class="menu-header z-depth-4">
-   		<div class="container">
-   			<div class="nav-wrapper">
-		      <a href="#" class="brand-logo">MATERIALIZE</a>
-		      
-		      <!-- Dropdown Menu -->
-			  <ul id='dropdown1' class='dropdown-content'>
-			    <li><a href="#!">Profile</a></li>
-			    <li><a href="#!">Change password</a></li>
-			    <li class="divider"></li>
-			    <li><a href="#!">Log-out</a></li>
-			  </ul>
-			  <!--mobile mode-->
-		      <ul id="nav-mobile" class="right hide-on-med-and-down">
-		        <li><a href="#" class="dropdown-button" data-activates="dropdown1">User</a></li>
-		      </ul>
-
-		      <!--mobile mode-->
-		      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-		      <!--mobile menu-->
-		      <ul class="side-nav" id="mobile-demo">
-		        <li><a href="sass.html" class="tooltipped" data-position="right" data-delay="50" data-tooltip="this is home"><i class="material-icons">home</i></a></li>
-		        <li><a href="badges.html" class="tooltipped" data-position="right" data-delay="50" data-tooltip="This is setting" ><i class="material-icons">settings</i></a></li>
-		      </ul>
-		    </div>
-   		</div>
-  	</nav>
+	<nav class="nav-extended z-depth-4">
+    {{> tabs_media}}
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      {{> menu_header}}
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li>
+      </ul>
+    </div>
+    <div class="nav-content" id="tabs-swipe-demo">
+      <ul class="tabs tabs-transparent">
+        <li class="tab col s6"><a class="active" href="#test-swipe-1">Image</a></li>
+    <li class="tab col s6"><a href="#test-swipe-2">Video</a></li>
+    <li class="tab col s6"><a href="#test-swipe-3">Music</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div id="test-swipe-1" class="col s12">{{> upload_media}}</div>
+  <div id="test-swipe-2" class="col s12">{{> video_upload}}</div>
+  <div id="test-swipe-3" class="col s12">Test 3</div>
+  
 </template>
+
+<template name="menu_header">
+  <!-- Dropdown Structure -->
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!"><i class="material-icons left">settings</i>Edit
+  Profile</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!"><i class="material-icons
+  left">power_settings_new</i>Logout</a></li>
+  </ul>
+
+    <div class="nav-wrapper menu-header">
+      <a href="#" data-activates="mobile-demo"
+  class="button-collapse"><i class="material-icons">menu</i></a>
+      <a class="dropdown-button" href="#!"
+  data-activates="dropdown1">User<i class="material-icons
+  right">more_vert</i></a>
+    </div>
+</template>
+
+<template name="tabs_media">
+  <ul id="slide-out" class="side-nav fixed">
+      <li>
+          <a class="tooltipped" data-position="right" data-delay="50" data-tooltip="Media" href="#!">
+              <i class="medium material-icons">camera_alt</i>
+          </a>
+      </li>
+      <li>
+          <a class="tooltipped" data-position="right" data-delay="50" data-tooltip="Playlist" href="#!">
+              <i class="medium material-icons">camera</i>
+          </a>
+      </li>
+  </ul>
+</template>
+

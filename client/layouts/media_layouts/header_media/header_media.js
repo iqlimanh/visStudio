@@ -1,6 +1,8 @@
 Template.header_media.rendered = function(){
 	$(".button-collapse").sideNav();
 
+	$('ul.tabs').tabs();
+
 	$('.dropdown-button').dropdown({
 	      inDuration: 300,
 	      outDuration: 225,
