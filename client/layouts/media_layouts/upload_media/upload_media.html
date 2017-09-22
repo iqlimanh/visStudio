@@ -1,6 +1,6 @@
 <template name="upload_media">
-<div class="row mar">
-  <div class="col s12 m5 l12">
+<div class="row margin1">
+  <div class="col s6 m12 l6">
     <div class="card">
       <ul class="collection with-header">
         <li class="collection-header mar"><h4>Upload Image</h4></li>
@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <div class="col s12 m5 l12">
+  <div class="col s6 m12 l6">
     <div class="card">
       <ul class="collection with-header">
         <li class="collection-header"><h4>List Image</h4></li>
@@ -25,11 +25,12 @@
     
           <div class="collection">
             {{#each file}}
-              <a>{{name}}</a>
+              <a href=""><img src="{{file.link}}" alt="{{file.name}}"></a>
+              <a>{{name}}<br>{{createdAt}}</a>
               <a class="collection-item btn waves-effect" href="{{link}}?download=true" download="{{name}}" target="_parent" type="{{type}}">
                 <i class="material-icons">file_download</i>
               </a>
-              <button class="waves-effect btn delete" onClick="delete()"><i class="material-icons">delete</i></button>
+              <button><i class="material-icons">delete</i></button>
             {{/each}}
           </div>
   </div>
@@ -44,3 +45,4 @@
     <input id="fileInput" type="file" />
   {{/with}}
 </template>
+
